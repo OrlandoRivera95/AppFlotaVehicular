@@ -19,6 +19,7 @@ import { Count as LoopbackCount } from '../models/loopback/count';
   providedIn: 'root',
 })
 export class TranportistasControllerService extends BaseService {
+  
   constructor(
     config: ApiConfiguration,
     http: HttpClient

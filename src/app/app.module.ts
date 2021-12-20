@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { IconsProviderModule } from './icons-provider.module';
 
 
+
 //Components
 import { AppComponent } from './app.component';
 import { MenuComponent } from './pages/menu/menu.component';
@@ -35,6 +36,10 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzResultModule } from 'ng-zorro-antd/result';
 import { ApiInterceptor } from './api.interceptor';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+
 
 
 registerLocaleData(en);
@@ -51,8 +56,8 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     MenuComponent,
     WelcomeComponent,
     TransportistasComponent,
-    LoginComponent
-
+    LoginComponent,
+    
 
   ],
   imports: [
@@ -74,7 +79,10 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     NzIconModule,
     NzMessageModule,
     NzResultModule,
-
+    NzPopconfirmModule,
+    NzDrawerModule,
+    NzInputNumberModule,
+   
 
     ApiModule.forRoot({ rootUrl: environment.API }),
   ],
