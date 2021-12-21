@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import { Rutas } from '../api/models';
 import { RutasWithoutID } from '../api/models/rutas';
 
+// Agregue la Funcion Service para realizar el CRUD.
+// Utilizando Asi tambien los Models del Openapi.
+
 const ENDPOINT = 'rutas';
 
 @Injectable({
