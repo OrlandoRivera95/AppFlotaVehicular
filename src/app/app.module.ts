@@ -39,6 +39,7 @@ import { ApiInterceptor } from './api.interceptor';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { VehiculosComponent } from './pages/vehiculos/vehiculos.component';
 
 
 
@@ -57,6 +58,7 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     WelcomeComponent,
     TransportistasComponent,
     LoginComponent,
+    VehiculosComponent,
     
 
   ],
