@@ -15,6 +15,11 @@ export class LoginComponent implements OnInit {
   formulario: boolean = true;
   passwordVisible = false;
 
+//////------ Credenciales ------//////
+
+/////  Orlando@unitec.edu  //////
+//----------pass1234----------//
+
   submitForm(): void {
     if (this.validateForm.valid) {
       this.formulario = false;
