@@ -1,0 +1,81 @@
+<a (click)="open()"><i widht="500px" height="500px" nz-icon nzType="user-add" nzTheme="outline"></i> Ingresar Registro</a>
+<br><br>
+<nz-table #basicTable [nzData]="listOfPosiciones">
+  <thead>
+    <tr>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Altitud</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.latitud }}</td>
+      <td>{{ data.longitud }}</td>
+      <td>{{ data.altitud }}</td>
+      <td>
+        <a (click)="modificar(data)"><i nz-icon nzType="edit" nzTheme="outline"></i></a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a nz-popconfirm nzPopconfirmTitle="Estas seguro de borrar el registro?" [nzIcon]="iconTpl" (nzOnConfirm)="delete(data.id)" (nzOnCancel)="cancel()" nzCancelText="No" nzOkText="Si">
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+
+ <!--TEMPLATE-->
+ <ng-template #iconTpl>
+  <i nz-icon nzType="question-circle-o" style="color: red;"></i>
+</ng-template>
+
+
+
+<!--Drawer-->
+<nz-drawer
+      [nzBodyStyle]="{ overflow: 'auto' }"
+      [nzMaskClosable]="false"
+      [nzWidth]="720"
+      [nzVisible]="visible"
+      nzTitle="Formulario Posiciones"
+      [nzFooter]="footerTpl"
+      (nzOnClose)="close()"
+    > 
+      <form nz-form *nzDrawerContent (submit)="submitForm()" [formGroup]="form">
+        <div nz-row [nzGutter]="8">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label>Latitud</nz-form-label>
+              <nz-form-control>
+                <nz-input-number formControlName="latitud" [nzMin]="1"  [nzStep]="1" placeholder=""></nz-input-number>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row [nzGutter]="8">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label>Longitud</nz-form-label>
+              <nz-form-control>
+                <nz-input-number formControlName="longitud" [nzMin]="1"  [nzStep]="1" placeholder=""></nz-input-number>
+              </nz-form-control>
+            </nz-form-item>
+          </div> 
+            <div nz-col nzSpan="12">
+              <nz-form-item>
+                <nz-form-label>Altitud</nz-form-label>
+                <nz-form-control>
+                  <input formControlName="altitud" nz-input placeholder="" />
+                </nz-form-control>
+              </nz-form-item>
+          </div> 
+        </div>
+      </form>
+
+      <ng-template #footerTpl>
+        <div style="float: right">
+          <button nz-button style="margin-right: 8px;" (click)="close()">Cancelar</button>
+          <button nz-button nzType="primary" (click)="guardar()">Guardar</button>
+        </div>
+      </ng-template>
+    </nz-drawer>

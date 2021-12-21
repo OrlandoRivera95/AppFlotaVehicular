@@ -4,7 +4,7 @@
     <div class="sidebar-logo">
       <a>
         <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
-        <h1>Cuchumbo App</h1>
+        <h1>Flota Vehicular App</h1>
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
@@ -26,10 +26,25 @@
             <a routerLink="vehiculos">Vehiculos</a>
           </li>
         </ul>
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="rutas">Rutas</a>
+          </li>
+        </ul>
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="posiciones">Posiciones</a>
+          </li>
+        </ul>
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="recorridos">Recorridos</a>
+          </li>
+        </ul>
       </li>
-      <li nz-menu-item (click)="salir()">
-        <a><i nz-icon nzType="logout" nzTheme="outline"></i> Salir</a>
-      </li>
+    <li nz-menu-item (click)="salir()">
+      <a><i nz-icon nzType="logout" nzTheme="outline"></i> Salir</a>
+    </li>
     </ul>
   </nz-sider>
   <nz-layout>

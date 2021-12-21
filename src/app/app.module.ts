@@ -40,6 +40,9 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { VehiculosComponent } from './pages/vehiculos/vehiculos.component';
+import { RutasComponent } from './pages/rutas/rutas.component';
+import { PosicionesComponent } from './pages/posiciones/posiciones.component';
+import { RecorridosComponent } from './pages/recorridos/recorridos.component';
 
 
 
@@ -59,6 +62,10 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     TransportistasComponent,
     LoginComponent,
     VehiculosComponent,
+    RutasComponent,
+    PosicionesComponent,
+    RecorridosComponent
+  
     
 
   ],
